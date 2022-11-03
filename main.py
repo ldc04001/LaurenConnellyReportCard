@@ -38,10 +38,36 @@ def getNumberGradeFromUser():
   return val
 
 ################ Main Program ################
+option = ""
+students = {}
+
 
 # Application Loop
-while():
+while option != "6":
 
   # Prompt the user to select an option
   print()
   displayMenu()
+  option = input("Select an Option: ")
+
+  # Perform selected option
+  # If option 1 selected, prompt them to enter a student name
+  if option == "1":
+    studentName = input("Enter student name: ")
+    students[studentName] = []
+    print(f"{studentName} added!")
+
+  # If option 2 selected, prompt them to enter a student to remove
+  if option == "2":
+    studentName = input("Enter student name: ")
+    if studentName in students:
+      students.pop(studentName)
+
+    else: 
+      print(f"{studentName} not in dictionary!")
+
+  # if they select 3, add a grade to a student
+  if option == "3":
+    
+    
+    
