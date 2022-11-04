@@ -10,8 +10,7 @@ def displayMenu():
   print("2. Remove a Student")
 
   # This option will require you to grab a student from a dictionary and add a quiz grade to it's corresponding collection of grades!
-  # You'll also need to use a pre-written function that ensures the user is entering a valid grade (a decimal number)
-  print("3. Add Quiz Grade for Student")
+    print("3. Add Quiz Grade for Student")
 
   # This option will require you to use a loop to list all of the grades for an INDIVIDUAL student!
   print("4. List a Student's Quiz Grades")
@@ -22,8 +21,6 @@ def displayMenu():
   print("6. Quit")
 
 # Prompts the user to enter a numeric grade
-# This function works, and ensures the user entered a valid float for the grade
-# It's not important HOW this function works, but how to USE this function
 def getNumberGradeFromUser():
 
   val = None
@@ -61,29 +58,45 @@ while userOption != "6":
 
   # If option 2 selected, prompt them to enter a student to remove
   if userOption == "2":
+    
+    # Prompt user to enter a student name
     studentName2 = input("Enter student name: ")
+    
+    # If the name entered has already been added, then remove the name
     if studentName2 in students:
       students.pop(studentName2)
       print(f"{studentName2} was removed!")
 
+    # If the name has not in the dictionary, tell the user that
     else: 
       print(f"{studentName2} not in dictionary!")
 
   # If they select 3, add a grade to a student
   if userOption == "3":
     
-    # prompt user to enter a student name
+    # Prompt user to enter a student name
     studentName3 = input("Enter student name: ")
-    
+
+    # If the name entered is in the dictionary, get the grade for the student
     if studentName3 in students:
       grade = getNumberGradeFromUser()
+
+      # Add the new grade to the student's list of quiz grades
       students[studentName3].append(grade)
+
+      # Display the grade you added
       print(f"Added {grade} to {studentName3} 's quizzes")
 
   # List a student's Quiz grades
   if userOption == "4":
+    
+    # Prompt user to enter a student name
     studentName4 = input("Enter student name: ")
+
+    # Show the student's name
     print(f"{studentName4}'s Quizzes: ")
+
+    # Show each quiz grade on a different line
     for grade in students[studentName4]:
       print(grade)
 
