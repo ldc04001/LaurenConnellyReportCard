@@ -10,7 +10,7 @@ def displayMenu():
   print("2. Remove a Student")
 
   # This option will require you to grab a student from a dictionary and add a quiz grade to it's corresponding collection of grades!
-    print("3. Add Quiz Grade for Student")
+  print("3. Add Quiz Grade for Student")
 
   # This option will require you to use a loop to list all of the grades for an INDIVIDUAL student!
   print("4. List a Student's Quiz Grades")
@@ -54,8 +54,7 @@ while userOption != "6":
     studentName1 = input("Enter student name: ")
     students[studentName1] = []
     print(f"{studentName1} added!")
-    print(students)
-
+   
   # If option 2 selected, prompt them to enter a student to remove
   if userOption == "2":
     
