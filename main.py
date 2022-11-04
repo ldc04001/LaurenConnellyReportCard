@@ -54,30 +54,37 @@ while userOption != "6":
   # Perform selected option
   # If option 1 selected, prompt them to enter a student name
   if userOption == "1":
-    studentName = input("Enter student name: ")
-    students[studentName] = []
-    print(f"{studentName} added!")
+    studentName1 = input("Enter student name: ")
+    students[studentName1] = []
+    print(f"{studentName1} added!")
     print(students)
 
   # If option 2 selected, prompt them to enter a student to remove
   if userOption == "2":
-    studentName = input("Enter student name: ")
-    if studentName in students:
-      students.pop(studentName)
+    studentName2 = input("Enter student name: ")
+    if studentName2 in students:
+      students.pop(studentName2)
 
     else: 
       print(f"{studentName} not in dictionary!")
 
-  # if they select 3, add a grade to a student
+  # If they select 3, add a grade to a student
   if userOption == "3":
     
     # prompt user to enter a student name
-    studentName = input("Enter student name: ")
+    studentName3 = input("Enter student name: ")
     
-    if studentName in students:
-      for key,value in students.items():
-        value.append(getNumberGradeFromUser())
-        print(f"Added {value[0]} to {key}'s quizzes")
+    if studentName3 in students:
+      grade = getNumberGradeFromUser()
+      students[studentName3].append(grade)
+      print(f"Added {grade} to {studentName3} 's quizzes")
+
+  # List a student's Quiz grades
+  if userOption == "4":
+    studentName4 = input("Enter student name: ")
+    print(f"{studentName4}'s Quizzes: ")
+    for grade in students[studentName4]:
+      print(grade)
       
         
       
