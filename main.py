@@ -41,7 +41,7 @@ def getNumberGradeFromUser():
 userOption = ""
 students = {}
 
-
+from statistics import mean
 
 # Application Loop
 while userOption != "6":
@@ -64,9 +64,10 @@ while userOption != "6":
     studentName2 = input("Enter student name: ")
     if studentName2 in students:
       students.pop(studentName2)
+      print(f"{studentName2} was removed!")
 
     else: 
-      print(f"{studentName} not in dictionary!")
+      print(f"{studentName2} not in dictionary!")
 
   # If they select 3, add a grade to a student
   if userOption == "3":
@@ -85,9 +86,31 @@ while userOption != "6":
     print(f"{studentName4}'s Quizzes: ")
     for grade in students[studentName4]:
       print(grade)
+
+  # Display a students letter grade
+  if userOption == "5":
+
+    # Prompt user to enter name
+    studentName5 = input("Enter student name: ")
+
+    # use the mean function to get the average of all the grades the student has
+    avg = mean(students[studentName5])
+
+    # print out the corresponding letter grade
+    if(avg > 89):
+      print(f"{studentName5}'s current grade is an A")
+    elif(avg > 79):
+      print(f"{studentName5}'s current grade is an B")
+    elif(avg > 69):
+      print(f"{studentName5}'s current grade is an C")
+    elif(avg > 59):
+      print(f"{studentName5}'s current grade is an D")
+    elif(avg > 49):
+      print(f"{studentName5}'s current grade is an E")
+    else:
+      print(f"{studentName5} has Failed") 
       
-        
       
-    
-    
-    
+      
+      
+      
